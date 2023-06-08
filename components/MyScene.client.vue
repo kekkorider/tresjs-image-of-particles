@@ -1,13 +1,11 @@
 <template>
 	<TresCanvas v-bind="gl" window-size>
-		<TresPerspectiveCamera :position="[0, 1.7, 7]" :look-at="[0, 0, 0]" />
+		<TresPerspectiveCamera :position="[0, 0, 3.5]" :look-at="[0, 0, 0]" />
 
-		<OrbitControls :enabled="config.orbitControlsEnabled" />
-
-		<SampleBox :position="[-2, 0, 0]" />
+		<OrbitControls :enabled="config.orbitControlsEnabled" make-default />
 
 		<Suspense>
-			<Suzanne :position="[2, 0, 0]" />
+			<Wall />
 		</Suspense>
 	</TresCanvas>
 </template>
@@ -24,7 +22,7 @@ const { pane } = useTweakPane()
 const sampleStore = useSampleStore()
 
 const config = reactive({
-	orbitControlsEnabled: true,
+	orbitControlsEnabled: false,
 })
 
 const gl = reactive({
