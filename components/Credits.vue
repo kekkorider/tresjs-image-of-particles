@@ -1,14 +1,7 @@
 <template>
 	<div class="credits">
 		<header class="header">
-			<h1 class="title">
-				<NuxtLink to="https://nuxt.com/" target="_blank" rel="noopener"
-					>Nuxt 3</NuxtLink
-				>+<NuxtLink to="https://tresjs.org/" target="_blank" rel="noopener"
-					>TresJS</NuxtLink
-				>
-				starter
-			</h1>
+			<h1 class="title">WebGL images of particles</h1>
 
 			<p class="subtitle">
 				by
@@ -22,14 +15,21 @@
 		</header>
 
 		<p style="opacity: 0.85">
+			Created with
+			<NuxtLink to="https://tresjs.org/" target="_blank" rel="noopener"
+				>TresJS</NuxtLink
+			>.
+		</p>
+
+		<p style="opacity: 0.85">
 			Check out the
 			<a
-				href="https://github.com/kekkorider/nuxt-tres-starter"
+				href="https://github.com/kekkorider/tresjs-image-of-particles"
 				target="_blank"
 				rel="noopener"
 				>GitHub Repository</a
-			>.<br />
-			<strong>TIP</strong>: Click the box to animate it.
+			>.<br /><br />
+			<strong>TIP</strong>: Click the image to animate it.
 		</p>
 	</div>
 </template>
@@ -44,7 +44,7 @@
 	padding: 24px;
 	border-radius: 12px;
 	color: rgba(255, 255, 245, 0.86);
-	font-family: 'Maven Pro', sans-serif;
+	font-family: 'Noto Sans', sans-serif;
 	position: fixed;
 	left: 30px;
 	bottom: 30px;

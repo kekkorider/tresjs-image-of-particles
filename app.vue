@@ -1,7 +1,7 @@
 <template>
 	<MyScene />
 
-	<Credits v-if="false" />
+	<Credits />
 </template>
 
 <style lang="scss">

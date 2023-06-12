@@ -4,11 +4,11 @@ import glsl from 'vite-plugin-glsl'
 export default defineNuxtConfig({
   app: {
     head: {
-      title: 'Nuxt 3 + TresJS starter',
+      title: 'TresJS - Images of particles',
       meta: [
         {
           name: 'description',
-          content: 'Starter template for Nuxt 3 + TresJS created by Francesco Michelini'
+          content: 'ThresJS demo of a carousel whose images are made of particles'
         }
       ]
     },
@@ -24,7 +24,7 @@ export default defineNuxtConfig({
         prefetch: true,
         download: true,
         families: {
-          'Maven+Pro': [400, 500, 700]
+          'Noto+Sans': [400, 500, 700]
         }
       }
     ],

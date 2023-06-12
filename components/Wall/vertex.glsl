@@ -5,6 +5,7 @@ uniform vec2 u_Mouse;
 uniform float u_MouseIntensity;
 
 varying float vDistance;
+varying vec3 vPosition;
 
 #include ../../assets/shaders/lygia/generative/curl.glsl
 
@@ -21,4 +22,5 @@ void main() {
   gl_PointSize = 5.0;
 
   vDistance = smoothstep(1.55, 0.0, d) * 0.5 * u_MouseIntensity;
+  vPosition = position;
 }
