@@ -14,7 +14,7 @@ void main() {
   #include <begin_vertex>
 
   float d = distance(position.xy, u_Mouse);
-  transformed += curl(transformed) * sin(d * 3.0 - u_Time*3.0) * smoothstep(1.15, 0.0, d) * 1.5 * u_MouseIntensity;
+  transformed += curl(transformed) * sin(d * 3.0 - u_Time*3.0) * smoothstep(1.15, 0.0, d) * u_MouseIntensity * 0.8;
 
   #include <project_vertex>
 

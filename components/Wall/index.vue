@@ -36,6 +36,19 @@ const material = {
 	depthTest: false,
 }
 
+const xTo = $gsap.quickTo(material.uniforms.u_Mouse.value, 'x', {
+	duration: 0.45,
+})
+
+const yTo = $gsap.quickTo(material.uniforms.u_Mouse.value, 'y', {
+	duration: 0.45,
+})
+
+const intensityTo = $gsap.quickTo(material.uniforms.u_MouseIntensity, 'value', {
+	duration: 0.1,
+	overwrite: 'auto',
+})
+
 onMounted(async () => {
 	await nextTick()
 
@@ -47,17 +60,8 @@ onMounted(async () => {
 function onPointermove(ev) {
 	pointerVector.set(ev.point.x, ev.point.y)
 
-	$gsap.to(material.uniforms.u_Mouse.value, {
-		x: ev.point.x,
-		y: ev.point.y,
-		overwrite: 'auto',
-		duration: 0.85,
-	})
-
-	$gsap.to(material.uniforms.u_MouseIntensity, {
-		value: () => material.uniforms.u_Mouse.value.distanceTo(pointerVector),
-		duration: 1.2,
-		overwrite: 'auto',
-	})
+	xTo(ev.point.x)
+	yTo(ev.point.y)
+	intensityTo(material.uniforms.u_Mouse.value.distanceTo(pointerVector))
 }
 </script>
