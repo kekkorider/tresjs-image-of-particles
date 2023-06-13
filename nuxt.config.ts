@@ -18,6 +18,10 @@ export default defineNuxtConfig({
     '@/assets/css/index.scss',
   ],
 
+  nitro: {
+    preset: 'vercel'
+  },
+
   modules: [
     [
       '@nuxtjs/google-fonts', {
