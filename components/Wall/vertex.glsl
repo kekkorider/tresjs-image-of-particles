@@ -15,11 +15,11 @@ void main() {
   #include <begin_vertex>
 
   float d = distance(position.xy, u_Mouse);
-  transformed += curl(transformed) * sin(d * 3.0 - u_Time*3.0) * smoothstep(1.15, 0.0, d) * u_MouseIntensity * 0.8;
+  transformed += curl(transformed) * sin(d * 3.0 - u_Time*3.0) * smoothstep(1.15, 0.0, d) * u_MouseIntensity * 0.65;
 
   #include <project_vertex>
 
-  gl_PointSize = 5.0;
+  gl_PointSize = 30.0 * ( 1.0 / - mvPosition.z );
 
   vDistance = smoothstep(1.55, 0.0, d) * 0.5 * u_MouseIntensity;
   vPosition = position;

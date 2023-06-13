@@ -17,13 +17,14 @@ void main() {
 
   // Texture 0
   vec4 tex0 = texture2D(t_Map0, vUv);
-  tex0.rgb += 0.5 * vDistance * luminance(tex0);
+  tex0.rgb += 1.8 * vDistance * luminance(tex0);
   tex0.a *= d;
 
   vec4 tex0bn = desaturate(tex0, 1.0);
 
   // Texture 1
   vec4 tex1 = texture2D(t_Map1, vUv);
+  tex1.rgb += 1.8 * vDistance * luminance(tex1);
   tex1.a *= d;
 
   vec4 tex1bn = desaturate(tex1, 1.0);
@@ -32,8 +33,8 @@ void main() {
   vec4 color0 = mix(tex0bn, tex0, vDistance*3.0);
   vec4 color1 = mix(tex1bn, tex1, vDistance*3.0);
 
-  float transition = smoothstep(1.0, 0.2, length(vPosition.xy - u_TransitionOrigin) / (u_Transition * 9.0));
+  float transition = smoothstep(1.0, 0.2, length(vPosition.xy - u_TransitionOrigin) / (u_Transition * 12.0));
   vec4 color = mix(color0, color1, transition);
 
-  gl_FragColor = color;
+  gl_FragColor = color * d;
 }
