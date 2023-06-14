@@ -51,6 +51,9 @@ export default defineNuxtConfig({
   },
 
   vite: {
-    plugins: [glsl()]
+    plugins: [glsl()],
+    resolve: {
+      dedupe: ['three', '@tresjs/core']
+    }
   }
 })
